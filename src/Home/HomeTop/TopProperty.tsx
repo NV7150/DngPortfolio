@@ -1,24 +1,45 @@
-import {Box, Grid} from "@material-ui/core";
+import React from "react";
+import {Box, Grid, Theme} from "@material-ui/core";
+import {createStyles, makeStyles} from "@material-ui/styles";
 
 type TopPropertyProps = {
     propName: string;
     propKeyword: Array<string>;
 }
 
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        root: {
+            fontSize: "2.5rem",
+            padding: theme.spacing(2),
+            color: "aliceblue"
+        },
+        title: {
+            color: theme.palette.secondary.main
+        }
+    })
+)
+
 
 const TopProperty = (props: TopPropertyProps) => {
-    const keywords = props.propKeyword.map((keyword) => {
+    const classes = useStyles();
+
+    let keywords = props.propKeyword.map((keyword, i) => {
         return (
-            <Box p={1}>{keyword + ","}</Box>
+            <Box p={1}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
         );
     });
 
+
     return (
-        <Grid container alignItems={"flex-start"} >
-            <Grid item xs={3}>
-                {props.propName} :
+        <Grid container alignItems={"flex-start"} className={classes.root}>
+            <Grid item xs={3} className={classes.title}>
+                {props.propName}
             </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={1}>
+                :
+            </Grid>
+            <Grid item xs={8}>
                 <Box display="flex" flexWrap="wrap">
                     {keywords}
                 </Box>
