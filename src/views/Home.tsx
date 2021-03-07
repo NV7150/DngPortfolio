@@ -1,12 +1,13 @@
+import HomeTop from "../Home/HomeTop";
 
-class HomeProps{
+type HomeProps = {
 
 }
 
 const Home = (props: HomeProps) => {
     return (
         <div>
-            This is Home
+            <HomeTop />
         </div>
     );
 };
