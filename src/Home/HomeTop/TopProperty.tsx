@@ -11,8 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             fontSize: "2.5rem",
-            padding: theme.spacing(2),
-            color: "aliceblue"
+            padding: theme.spacing(2)
         },
         title: {
             color: theme.palette.secondary.main

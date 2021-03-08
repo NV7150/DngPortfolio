@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.palette.primary.main,
             fontSize: "5rem"
         },
-        blacket: {
-            color: "aliceblue",
+        bracket: {
             fontSize: "2.5rem",
         },
         row: {
@@ -38,7 +37,7 @@ const HomeTop = (props: HomeTopProps) => {
                 <Grid item className={classes.heading}>
                     Dango
                 </Grid>
-                <Grid item className={classes.blacket}>
+                <Grid item className={classes.bracket}>
                     &nbsp;= {"{"}
                 </Grid>
             </Grid>
@@ -51,7 +50,7 @@ const HomeTop = (props: HomeTopProps) => {
             </Grid>
 
             <Grid item xs={12}>
-                <Box className={classes.blacket}>{"}"}</Box>
+                <Box className={classes.bracket}>{"}"}</Box>
             </Grid>
         </Grid>
 
