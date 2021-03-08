@@ -2,10 +2,9 @@ import React from "react";
 import {Box, Grid, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 
-type PropertyStyles = {
+export interface PropertyStyles{
     fontSize: string
 }
-
 type PropertyProps = {
     propName: string;
     propKeyword: Array<string>;

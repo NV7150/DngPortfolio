@@ -2,10 +2,10 @@ import React from "react";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import { Box,Grid, Theme} from "@material-ui/core";
 
-import Property from "../GeneralComponents/Property";
+import Property, {PropertyStyles} from "./Property";
 
-type PropertyListStyles = {
-    fontSize: string,
+export interface PropertyListStyles extends PropertyStyles {
+    fontSize: string
     indent: string
 }
 
