@@ -1,4 +1,6 @@
 import React from "react";
+import ProfileInfo from "../Profile/ProfileInfo";
+import ProfileData from "../assets/datas/ProfileData.json"
 
 type ProfileProps = {
 
@@ -6,7 +8,7 @@ type ProfileProps = {
 
 const profilePage = (props: ProfileProps) => {
     return (
-        <div>this is profile</div>
+        <ProfileInfo info={ProfileData.info} />
     );
 };
 

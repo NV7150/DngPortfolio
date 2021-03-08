@@ -2,7 +2,7 @@ import React from "react";
 import {Box, Grid, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 
-type TopPropertyProps = {
+type PropertyProps = {
     propName: string;
     propKeyword: Array<string>;
 }
@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 
-const TopProperty = (props: TopPropertyProps) => {
+const Property = (props: PropertyProps) => {
     const classes = useStyles();
 
     let keywords = props.propKeyword.map((keyword, i) => {
@@ -47,4 +47,4 @@ const TopProperty = (props: TopPropertyProps) => {
     );
 };
 
-export default TopProperty;
+export default Property;

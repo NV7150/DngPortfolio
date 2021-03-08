@@ -1,0 +1,44 @@
+{
+  "info": {
+    "hs": "Tokyo Tech High School of Science and Technology",
+    "univ": "keio SFC / Environment and Information",
+    "lang": [
+      "C/C++",
+      "C#",
+      "Java",
+      "JS",
+      "Python"
+    ],
+    "skills": [
+      "Arduino",
+      "Unity",
+      "TensorFlow",
+      "Vue.js",
+      "React"
+    ],
+    "hobby": [
+      "Anime",
+      "Game",
+      "Programming"
+    ]
+  },
+  "profile": [
+    "エンジニア志望の大学生。",
+    "いろんなIT技術を広く浅くやってます。AI+ハードウェアみたいにいろんな技術を組み合わせてものづくりをするのが好き。",
+    "将来的にもっと手軽にものづくりをできるようにしたり，ユーザからのフィードバックが受けやすいものづくりのコミュニティを作りたい。",
+    "現在Web系を学習中。近日中にバックエンドとインフラ系を勉強予定。あらかた使えるようになったらFlutterでネイティブのモバイルアプリ開発をやりたい。"
+  ],
+  "history": [
+    ["小4", "JSで初めてプログラミングに触れる"],
+    ["中1", "独学でJavaを始め，沼にはまる"],
+    ["中2", "プログラミングスクールでUnityを始め，さらに沼にはまる"],
+    ["高1", "Arduinoで電子工作の沼にはまる。"],
+    ["高2", "韓国とタイで研究発表。ついでにVRにちょっと手を出す。"],
+    ["高3前半", "課題研究で機械学習(AI)に手を出す。Yahoo!Japan主催のOpen Hack U 2020 Online Vol.1でHappy Hacking賞を受賞。"],
+    ["高3後半", "受験終了後，Web系(フロントエンド)に手を出す。"]
+  ],
+  "contact": {
+    "twitter": "https://twitter.com/publicClassMain",
+    "GitHub": "https://github.com/NV7150"
+  }
+}

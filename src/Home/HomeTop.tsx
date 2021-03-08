@@ -1,5 +1,5 @@
 import React from "react";
-import TopProperty from "./HomeTop/TopProperty";
+import Property from "../GeneralComponents/Property";
 import MyData from "../assets/datas/MyData.json"
 import {Grid, Theme, Box} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
@@ -43,10 +43,10 @@ const HomeTop = (props: HomeTopProps) => {
             </Grid>
 
             <Grid item xs={12} className={classes.row}>
-                <TopProperty propName={"jobs"} propKeyword={MyData.jobs}/>
+                <Property propName={"jobs"} propKeyword={MyData.jobs}/>
             </Grid>
             <Grid item xs={12} className={classes.row}>
-                <TopProperty propName={"keywords"} propKeyword={MyData.keywords}/>
+                <Property propName={"keywords"} propKeyword={MyData.keywords}/>
             </Grid>
 
             <Grid item xs={12}>
