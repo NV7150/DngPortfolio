@@ -52,7 +52,7 @@ const ProfileInfo = (props: ProfileInfoProps) => {
 
         properties.push((
             <Grid item xs={12} key={rawKey}>
-                <Property propName={keys[rawKey]} propKeyword={keyword} />
+                <Property propName={keys[rawKey]} propKeyword={keyword} styles={{fontSize: "1.5rem"}} />
             </Grid>
         ));
     }

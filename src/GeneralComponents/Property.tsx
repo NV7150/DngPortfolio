@@ -2,25 +2,33 @@ import React from "react";
 import {Box, Grid, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 
+type PropertyStyles = {
+    fontSize: string
+}
+
+
 type PropertyProps = {
     propName: string;
     propKeyword: Array<string>;
+    styles: PropertyStyles;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            fontSize: "2.5rem",
-            padding: theme.spacing(2)
-        },
-        title: {
-            color: theme.palette.secondary.main
-        }
-    })
-)
+
 
 
 const Property = (props: PropertyProps) => {
+    const useStyles = makeStyles((theme: Theme) =>
+        createStyles({
+            root: {
+                fontSize: props.styles.fontSize,
+                padding: theme.spacing(2)
+            },
+            title: {
+                color: theme.palette.secondary.main
+            }
+        })
+    )
+
     const classes = useStyles();
 
     let keywords = props.propKeyword.map((keyword, i) => {

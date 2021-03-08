@@ -43,10 +43,10 @@ const HomeTop = (props: HomeTopProps) => {
             </Grid>
 
             <Grid item xs={12} className={classes.row}>
-                <Property propName={"jobs"} propKeyword={MyData.jobs}/>
+                <Property propName={"jobs"} propKeyword={MyData.jobs} styles={{fontSize: "2.5rem"}}/>
             </Grid>
             <Grid item xs={12} className={classes.row}>
-                <Property propName={"keywords"} propKeyword={MyData.keywords}/>
+                <Property propName={"keywords"} propKeyword={MyData.keywords} styles={{fontSize: "2.5rem"}}/>
             </Grid>
 
             <Grid item xs={12}>
