@@ -19,13 +19,16 @@ type ProfileInfoProps = {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            fontSize: "1rem",
+            fontSize: "1.5rem",
             padding: theme.spacing(2)
         },
         title: {
             fontSize: "3rem",
             color: theme.palette.primary.main,
             borderBottom: "0.5vh solid aliceblue",
+        },
+        bracket: {
+            marginTop: "1rem"
         }
     })
 )
@@ -45,7 +48,13 @@ const ProfileInfo = (props: ProfileInfoProps) => {
             <Grid item xs={12} className={classes.title}>
                 Dango.info
             </Grid>
+            <Grid item xs={12} className={classes.bracket}>
+                {"{"}
+            </Grid>
             <PropertyList<ProfData> info={info} styles={propStyle} />
+            <Grid item xs={12}>
+                {"}"}
+            </Grid>
         </Grid>
     );
 
