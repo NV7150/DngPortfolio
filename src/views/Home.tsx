@@ -1,3 +1,4 @@
+import React from "react";
 import HomeTop from "../Home/HomeTop";
 
 type HomeProps = {
