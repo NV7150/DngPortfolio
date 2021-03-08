@@ -6,15 +6,11 @@ type PropertyStyles = {
     fontSize: string
 }
 
-
 type PropertyProps = {
     propName: string;
     propKeyword: Array<string>;
     styles: PropertyStyles;
 }
-
-
-
 
 const Property = (props: PropertyProps) => {
     const useStyles = makeStyles((theme: Theme) =>

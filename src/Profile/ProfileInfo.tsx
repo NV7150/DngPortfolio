@@ -2,7 +2,7 @@ import React from "react";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import {Grid, Theme} from "@material-ui/core";
 
-import Property from "../GeneralComponents/Property";
+import PropertyList from "../GeneralComponents/PropertyList";
 
 type ProfData = {
     univ: string,
@@ -30,39 +30,22 @@ const useStyles = makeStyles((theme: Theme) =>
     })
 )
 
+const propStyle = {
+    fontSize: "1.5rem",
+    indent: "10vw"
+}
+
 
 const ProfileInfo = (props: ProfileInfoProps) => {
     const classes = useStyles();
     const info: ProfData = props.info;
-    const keys: string[] = Object.keys(info);
-
-    let properties = [];
-    for(const rawKey in keys){
-        const key : (keyof ProfData) = keys[rawKey] as (keyof ProfData);
-
-        let keyword: string[] = [];
-        const infoProp: string|string[] = info[key];
-
-        if(typeof infoProp === "string"){
-            keyword.push(infoProp);
-        }else{
-            keyword = infoProp;
-        }
-        console.log(keyword);
-
-        properties.push((
-            <Grid item xs={12} key={rawKey}>
-                <Property propName={keys[rawKey]} propKeyword={keyword} styles={{fontSize: "1.5rem"}} />
-            </Grid>
-        ));
-    }
 
     return (
         <Grid container direction={"row"} className={classes.root}>
             <Grid item xs={12} className={classes.title}>
                 Dango.info
             </Grid>
-            {properties}
+            <PropertyList<ProfData> info={info} styles={propStyle} />
         </Grid>
     );
 
