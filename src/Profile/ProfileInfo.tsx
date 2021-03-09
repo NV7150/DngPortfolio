@@ -8,7 +8,7 @@ type ProfData = {
     univ: string,
     hs: string,
     lang: Array<string>,
-    skills: Array<string>,
+    skill: Array<string>,
     hobby: Array<string>
 }
 
@@ -19,7 +19,7 @@ type ProfileInfoProps = {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            fontSize: "2rem",
+            fontSize: "1.5rem",
             padding: theme.spacing(2),
         },
         title: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 const propStyle = {
-    fontSize: "2rem",
+    fontSize: "1.5rem",
     indent: "10vw"
 }
 
