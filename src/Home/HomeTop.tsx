@@ -2,6 +2,7 @@ import React from "react";
 import {Grid, Theme, Box} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import PropertyList from "../GeneralComponents/PropertyList";
+import LinkButton from "../GeneralComponents/LinkButton";
 
 type HomeTopInfos = {
     jobs: string[];
@@ -57,6 +58,8 @@ const HomeTop = (props: HomeTopProps) => {
             <Grid item xs={12}>
                 <Box className={classes.bracket}>{"}"}</Box>
             </Grid>
+
+            <LinkButton linkName={"more"} linkTo={"/profile"} fontSize={"2rem"} />
         </Grid>
 
     )
