@@ -1,5 +1,5 @@
 import React from "react";
-import {Grid, Theme} from "@material-ui/core";
+import {Grid,Theme} from "@material-ui/core";
 
 import ProfileInfo from "../Profile/ProfileInfo";
 import ProfileDesc from "../Profile/ProfileDesc";
@@ -15,7 +15,7 @@ type ProfileProps = {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            paddingBottom: "10vh"
+            paddingBottom: "10vh",
         },
     })
 )

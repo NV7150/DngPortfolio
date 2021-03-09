@@ -1,5 +1,5 @@
 import React from "react";
-import {AppBar, Grid, Theme, Toolbar} from "@material-ui/core";
+import {Grid, Theme, Toolbar} from "@material-ui/core";
 import LinkButton from "../GeneralComponents/LinkButton";
 import {Page} from "../Pages";
 import {createStyles, makeStyles} from "@material-ui/styles";
@@ -37,13 +37,11 @@ const Footer = (props: FooterProps) => {
     });
 
     return (
-        <AppBar className={classes.bar}>
-            <Toolbar >
-                <Grid container direction={"row"} justify={"center"}>
-                    {buttons}
-                </Grid>
-            </Toolbar>
-        </AppBar>
+        <Toolbar className={classes.bar}>
+            <Grid container direction={"row"} justify={"center"}>
+                {buttons}
+            </Grid>
+        </Toolbar>
     )
 }
 

@@ -14,8 +14,8 @@ import Pages from "./Pages";
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            backgroundColor: "#282c34"
-        },
+            backgroundColor: "#282c34",
+        }
     })
 )
 
@@ -27,9 +27,11 @@ function App() {
     return (
     <Box className={"App " + classes.root}>
         <ThemeProvider theme={theme}>
-            <Router>
-                {routes}
-            </Router>
+            <Box minHeight={"100vh"}>
+                <Router>
+                    {routes}
+                </Router>
+            </Box>
             <Footer pages={Pages} />
         </ThemeProvider>
     </Box>
