@@ -37,8 +37,16 @@
     ["高3前半", "課題研究で機械学習(AI)に手を出す。Yahoo!Japan主催のOpen Hack U 2020 Online Vol.1でHappy Hacking賞を受賞。"],
     ["高3後半", "受験終了後，Web系(フロントエンド)に手を出す。"]
   ],
-  "contact": {
-    "twitter": "https://twitter.com/publicClassMain",
-    "GitHub": "https://github.com/NV7150"
-  }
+  "contact": [
+    {
+      "name": "Twitter",
+      "icon": "send",
+      "link": "https://twitter.com/publicClassMain"
+    },
+    {
+      "name": "GitHub",
+      "icon": "git_hub",
+      "link": "https://github.com/NV7150"
+    }
+  ]
 }

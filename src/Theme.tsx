@@ -16,6 +16,11 @@ const theme = createMuiTheme({
             main: "#5DCF96"
         }
 
+    },
+    typography: {
+        button: {
+            textTransform: "none"
+        }
     }
 });
 
