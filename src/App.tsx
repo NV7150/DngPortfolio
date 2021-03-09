@@ -1,15 +1,15 @@
 import React from 'react';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import {createStyles, makeStyles, ThemeProvider} from "@material-ui/styles";
+import {Box, Theme} from "@material-ui/core";
+
+import Footer from "./Footer/Footer";
 
 import './App.css';
 
 import theme from "./Theme";
-
-import {Box, Theme} from "@material-ui/core";
-
 import Pages from "./Pages";
-import Home from "./views/Home";
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -27,9 +27,10 @@ function App() {
     return (
     <Box className={"App " + classes.root}>
         <ThemeProvider theme={theme}>
-          <Router>
-              {routes}
-          </Router>
+            <Router>
+                {routes}
+            </Router>
+            <Footer pages={Pages} />
         </ThemeProvider>
     </Box>
     );
