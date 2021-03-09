@@ -44,7 +44,7 @@ const ProfileInfo = (props: ProfileInfoProps) => {
     const info: ProfData = props.info;
 
     return (
-        <Grid container direction={"row"} className={classes.root}>
+        <Grid item xs={12} container direction={"row"} className={classes.root}>
             <Grid item xs={12} className={classes.title}>
                 Dango.info
             </Grid>
