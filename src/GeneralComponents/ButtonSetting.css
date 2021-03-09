@@ -1,0 +1,16 @@
+.animatedButton::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #333;
+    transform: scale(0, 1);
+    transform-origin: center top;
+    border-bottom: aliceblue solid medium;
+    transition: transform .3s;
+}
+.animatedButton:hover::after {
+    transform: scale(1, 1);
+}
