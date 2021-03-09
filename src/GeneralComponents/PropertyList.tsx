@@ -43,7 +43,7 @@ class PropertyList<T> extends React.Component<PropertyListProps<T>, {}>{
             }
 
             properties.push((
-                <Grid item xs={12} key={rawKey}>
+                <Grid item xs={12}  key={rawKey}>
                     <Property
                         propName={keys[rawKey]}
                         propKeyword={keyword}

@@ -52,7 +52,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
 
     let keywords = props.propKeyword.map((keyword, i) => {
         return (
-            <Box p={1}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
+            <Box p={1} key={i}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
         );
     });
 
@@ -70,6 +70,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
         lg: girdParse(titleCol.lg),
         xl: girdParse(titleCol.xl)
     };
+
 
     return (
         <Grid container alignItems={"flex-start"} className={classes.root}>
