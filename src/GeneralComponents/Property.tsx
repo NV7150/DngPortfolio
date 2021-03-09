@@ -1,21 +1,45 @@
 import React from "react";
-import {Box, Grid, Theme} from "@material-ui/core";
+import {Box, Grid, GridSize, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
+import PropertyPropDefault from "./PropertyPropDefault";
 
-export interface PropertyStyles{
-    fontSize: string
-}
-type PropertyProps = {
+export type ColSize = {
+    xs: GridSize;
+    sm: GridSize;
+    md: GridSize;
+    lg: GridSize;
+    xl: GridSize;
+};
+
+export interface PropertyProps{
     propName: string;
     propKeyword: Array<string>;
-    styles: PropertyStyles;
+
+    fontSize: string;
+    xs: GridSize;
+    sm: GridSize;
+    md: GridSize;
+    lg: GridSize;
+    xl: GridSize;
 }
 
-const Property = (props: PropertyProps) => {
+const GRID_MAX: number = 11;
+const girdParse = (gird: GridSize): GridSize => {
+    if(gird === "auto")
+        return "auto";
+
+    const girdNum: number = gird as number;
+    if(girdNum <= 0 || GRID_MAX <= girdNum)
+        throw new Error("invalid grid num");
+
+    return (GRID_MAX - (girdNum)) as GridSize;
+};
+
+const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
     const useStyles = makeStyles((theme: Theme) =>
         createStyles({
             root: {
-                fontSize: props.styles.fontSize,
+                fontSize: props.fontSize,
                 padding: theme.spacing(2)
             },
             title: {
@@ -32,16 +56,45 @@ const Property = (props: PropertyProps) => {
         );
     });
 
+    const titleCol : ColSize = {
+        xs: props.xs,
+        sm: props.sm,
+        md: props.md,
+        lg: props.lg,
+        xl: props.xl
+    };
+    const exTitleCol: ColSize = {
+        xs: girdParse(titleCol.xs),
+        sm: girdParse(titleCol.sm),
+        md: girdParse(titleCol.md),
+        lg: girdParse(titleCol.lg),
+        xl: girdParse(titleCol.xl)
+    };
 
     return (
         <Grid container alignItems={"flex-start"} className={classes.root}>
-            <Grid item xs={3} className={classes.title}>
+            <Grid
+                item
+                xs={titleCol.xs}
+                sm={titleCol.sm}
+                md={titleCol.md}
+                lg={titleCol.lg}
+                xl={titleCol.xl}
+                className={classes.title}
+            >
                 {props.propName}
             </Grid>
             <Grid item xs={1}>
                 :
             </Grid>
-            <Grid item xs={8}>
+            <Grid
+                item
+                xs={exTitleCol.xs}
+                sm={exTitleCol.sm}
+                md={exTitleCol.md}
+                lg={exTitleCol.lg}
+                xl={exTitleCol.xl}
+            >
                 <Box display="flex" flexWrap="wrap">
                     {keywords}
                 </Box>
@@ -49,5 +102,7 @@ const Property = (props: PropertyProps) => {
         </Grid>
     );
 };
+
+Property.defaultProps = PropertyPropDefault;
 
 export default Property;
