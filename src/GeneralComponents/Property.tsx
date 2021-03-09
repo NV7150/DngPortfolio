@@ -4,11 +4,11 @@ import {createStyles, makeStyles} from "@material-ui/styles";
 import PropertyPropDefault from "./PropertyPropDefault";
 
 export type ColSize = {
-    xs: GridSize;
-    sm: GridSize;
-    md: GridSize;
-    lg: GridSize;
-    xl: GridSize;
+    xs: GridSize | boolean;
+    sm: GridSize | boolean;
+    md: GridSize | boolean;
+    lg: GridSize | boolean;
+    xl: GridSize | boolean;
 };
 
 export interface PropertyProps{
@@ -16,15 +16,17 @@ export interface PropertyProps{
     propKeyword: Array<string>;
 
     fontSize: string;
-    xs: GridSize;
-    sm: GridSize;
-    md: GridSize;
-    lg: GridSize;
-    xl: GridSize;
+    xs: GridSize | boolean;
+    sm: GridSize | boolean;
+    md: GridSize | boolean;
+    lg: GridSize | boolean;
+    xl: GridSize | boolean;
 }
 
 const GRID_MAX: number = 11;
-const girdParse = (gird: GridSize): GridSize => {
+const girdParse = (gird: GridSize | boolean): GridSize | boolean => {
+    if(typeof gird === "boolean")
+        return gird;
     if(gird === "auto")
         return "auto";
 
