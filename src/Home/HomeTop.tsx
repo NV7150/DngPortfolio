@@ -48,7 +48,11 @@ const HomeTop = (props: HomeTopProps) => {
                 </Grid>
             </Grid>
 
-            <PropertyList<HomeTopInfos> info={props.info} styles={propertyStyles} />
+            <PropertyList<HomeTopInfos>
+                info={props.info}
+                fontSize={propertyStyles.fontSize}
+                indent={propertyStyles.indent}
+            />
 
             <Grid item xs={12}>
                 <Box className={classes.bracket}>{"}"}</Box>

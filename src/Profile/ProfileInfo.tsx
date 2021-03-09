@@ -51,7 +51,11 @@ const ProfileInfo = (props: ProfileInfoProps) => {
             <Grid item xs={12} className={classes.bracket}>
                 {"{"}
             </Grid>
-            <PropertyList<ProfData> info={info} styles={propStyle} />
+            <PropertyList<ProfData>
+                info={info}
+                fontSize={propStyle.fontSize}
+                indent={propStyle.indent}
+            />
             <Grid item xs={12}>
                 {"}"}
             </Grid>
