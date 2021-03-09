@@ -7,7 +7,6 @@ import {createStyles, makeStyles} from "@material-ui/styles";
 import {ButtonBase, Theme} from "@material-ui/core";
 
 interface LinkButtonProps{
-    icon: string;
     linkName: string;
     linkTo: string;
 
@@ -30,7 +29,6 @@ const LinkButton = (props: LinkButtonProps) => {
     )
 
     const classes = useStyles();
-    // const buttonComp = (props.icon !== "none") ? (<Icon style={{color: "aliceblue"}}>{props.icon}</Icon>) : false;
 
     return (
         <ButtonBase
@@ -38,7 +36,7 @@ const LinkButton = (props: LinkButtonProps) => {
             href={props.linkTo}
             className={classes.root + " animatedButton"}
         >
-            {props.linkName}&nbsp;{">"}
+            {">"}&nbsp;{props.linkName}
         </ButtonBase>
     );
 };

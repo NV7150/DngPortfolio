@@ -42,7 +42,6 @@ const ProfileContact = (props: ProfileContactProps) => {
         return(
             <Grid item xs={3} key={i} className={classes.buttonGrid}>
                 <LinkButton
-                    icon={snsElem.icon}
                     linkName={snsElem.name}
                     linkTo={snsElem.link}
                     fontSize={styleSettings.fontSize}
@@ -57,7 +56,7 @@ const ProfileContact = (props: ProfileContactProps) => {
                 Dango.contact
             </Grid>
 
-            <Grid item xs={12} container direction="column" className={classes.content}>
+            <Grid item xs={12} container direction="row" className={classes.content}>
                 {button}
             </Grid>
         </Grid>
