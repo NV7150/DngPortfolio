@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme: Theme) =>
             top: "auto",
             bottom: 0,
             backgroundColor: "black",
-            // borderTop: "0.25vh solid aliceblue",
+            borderTop: "0.25vh solid aliceblue"
         },
     })
 )
