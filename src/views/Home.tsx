@@ -1,5 +1,6 @@
 import React from "react";
 import HomeTop from "../Home/HomeTop";
+import MyData from "../assets/datas/MyData.json"
 
 type HomeProps = {
 
@@ -8,7 +9,7 @@ type HomeProps = {
 const Home = (props: HomeProps) => {
     return (
         <div>
-            <HomeTop />
+            <HomeTop info={MyData} />
         </div>
     );
 };

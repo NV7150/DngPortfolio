@@ -1,11 +1,15 @@
 import React from "react";
-import Property from "../GeneralComponents/Property";
-import MyData from "../assets/datas/MyData.json"
 import {Grid, Theme, Box} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
+import PropertyList from "../GeneralComponents/PropertyList";
+
+type HomeTopInfos = {
+    jobs: string[];
+    keywords: string[];
+}
 
 type HomeTopProps = {
-
+    info: HomeTopInfos
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -21,11 +25,13 @@ const useStyles = makeStyles((theme: Theme) =>
         bracket: {
             fontSize: "2.5rem",
         },
-        row: {
-            marginLeft: "10vw"
-        }
     })
 )
+
+const propertyStyles = {
+    fontSize: "2.5rem",
+    indent: "10vw"
+}
 
 
 const HomeTop = (props: HomeTopProps) => {
@@ -42,12 +48,7 @@ const HomeTop = (props: HomeTopProps) => {
                 </Grid>
             </Grid>
 
-            <Grid item xs={12} className={classes.row}>
-                <Property propName={"jobs"} propKeyword={MyData.jobs} styles={{fontSize: "2.5rem"}}/>
-            </Grid>
-            <Grid item xs={12} className={classes.row}>
-                <Property propName={"keywords"} propKeyword={MyData.keywords} styles={{fontSize: "2.5rem"}}/>
-            </Grid>
+            <PropertyList<HomeTopInfos> info={props.info} styles={propertyStyles} />
 
             <Grid item xs={12}>
                 <Box className={classes.bracket}>{"}"}</Box>
