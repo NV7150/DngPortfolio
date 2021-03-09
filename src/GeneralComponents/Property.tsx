@@ -42,7 +42,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
         createStyles({
             root: {
                 fontSize: props.fontSize,
-                padding: theme.spacing(2)
+                padding: theme.spacing(2),
             },
             title: {
                 color: theme.palette.secondary.main
@@ -54,7 +54,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
 
     let keywords = props.propKeyword.map((keyword, i) => {
         return (
-            <Box p={1} key={i}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
+            <Box m={1} key={i}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
         );
     });
 

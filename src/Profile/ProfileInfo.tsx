@@ -19,8 +19,8 @@ type ProfileInfoProps = {
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
-            fontSize: "1.5rem",
-            padding: theme.spacing(2)
+            fontSize: "2rem",
+            padding: theme.spacing(2),
         },
         title: {
             fontSize: "3rem",
@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         bracket: {
             marginTop: "1rem"
-        }
+        },
     })
 )
 
 const propStyle = {
-    fontSize: "1.5rem",
+    fontSize: "2rem",
     indent: "10vw"
 }
 
@@ -44,19 +44,21 @@ const ProfileInfo = (props: ProfileInfoProps) => {
     const info: ProfData = props.info;
 
     return (
-        <Grid item xs={12} container direction={"row"} className={classes.root}>
+        <Grid container direction={"row"} className={classes.root}>
             <Grid item xs={12} className={classes.title}>
                 Dango.info
             </Grid>
             <Grid item xs={12} className={classes.bracket}>
                 {"{"}
             </Grid>
-            <PropertyList<ProfData>
-                info={info}
-                fontSize={propStyle.fontSize}
-                indent={propStyle.indent}
-                xs={2}
-            />
+            <Grid item xs={12}>
+                <PropertyList<ProfData>
+                    info={info}
+                    fontSize={propStyle.fontSize}
+                    indent={propStyle.indent}
+                    xs={1}
+                />
+            </Grid>
             <Grid item xs={12}>
                 {"}"}
             </Grid>

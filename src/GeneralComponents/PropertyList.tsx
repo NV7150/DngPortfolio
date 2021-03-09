@@ -16,7 +16,7 @@ class PropertyList<T> extends React.Component<PropertyListProps<T>, {}>{
         const props = this.props;
 
         const rootStyle = {
-            marginLeft: props.indent
+            marginLeft: props.indent,
         }
 
         const info = props.info;
