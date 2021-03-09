@@ -6,9 +6,10 @@ import './App.css';
 
 import theme from "./Theme";
 
-import Home from "./views/Home"
-import Profile from "./views/Profile";
-import {Theme} from "@material-ui/core";
+import {Box, Theme} from "@material-ui/core";
+
+import Pages from "./Pages";
+import Home from "./views/Home";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -20,16 +21,18 @@ const useStyles = makeStyles((theme: Theme) =>
 
 function App() {
     const classes = useStyles();
-  return (
-    <div className={"App " + classes.root}>
+    const routes = Pages.map((page, i) => {
+        return (<Route exact path={page.link} component={page.component} key={i} />);
+    });
+    return (
+    <Box className={"App " + classes.root}>
         <ThemeProvider theme={theme}>
           <Router>
-            <Route exact path="/" component={Home} />
-            <Route path="/profile" component={Profile} />
+              {routes}
           </Router>
         </ThemeProvider>
-    </div>
-  );
+    </Box>
+    );
 }
 
 export default App;
