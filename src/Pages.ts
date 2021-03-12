@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
+import WorksPage from "./views/WorksPage";
 
 export interface Page{
     name: string;
@@ -18,6 +19,11 @@ const Pages: Page[] = [
         name: "Profile",
         link: "/profile",
         component: Profile
+    },
+    {
+        name:"Works",
+        link: "/works",
+        component: WorksPage
     }
 ];
 
