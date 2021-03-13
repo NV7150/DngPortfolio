@@ -16,6 +16,7 @@ export interface PropertyProps{
     propKeyword: Array<string>;
 
     fontSize: string;
+    padding: number;
     xs: GridSize | boolean;
     sm: GridSize | boolean;
     md: GridSize | boolean;
@@ -42,11 +43,14 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
         createStyles({
             root: {
                 fontSize: props.fontSize,
-                padding: theme.spacing(2),
+                padding: theme.spacing(props.padding),
             },
             title: {
                 color: theme.palette.secondary.main
-            }
+            },
+            colon: {
+                textAlign: "center"
+            },
         })
     )
 
@@ -54,7 +58,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
 
     let keywords = props.propKeyword.map((keyword, i) => {
         return (
-            <Box m={1} key={i}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
+            <Box marginLeft={1} key={i}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
         );
     });
 
@@ -87,7 +91,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
             >
                 {props.propName}
             </Grid>
-            <Grid item xs={1}>
+            <Grid item xs={1} className={classes.colon}>
                 :
             </Grid>
             <Grid
@@ -97,8 +101,9 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
                 md={exTitleCol.md}
                 lg={exTitleCol.lg}
                 xl={exTitleCol.xl}
+                alignItems={"flex-start"}
             >
-                <Box display="flex" flexWrap="wrap">
+                <Box display="flex" flexWrap="wrap" alignItems={"flex-start"}>
                     {keywords}
                 </Box>
             </Grid>

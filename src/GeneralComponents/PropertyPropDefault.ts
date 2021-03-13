@@ -2,6 +2,7 @@ import {PropertyProps} from "./Property";
 
 const defaultProp: Partial<PropertyProps>  = {
     fontSize: "1rem",
+    padding: 2,
     xs: 3,
     sm: false,
     md: false,
