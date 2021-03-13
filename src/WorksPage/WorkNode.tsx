@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme: Theme) =>
         root: {
             width: "95%",
             height: "95%",
-            backgroundColor: "red",
             position: "relative"
         },
         imgSet: {
