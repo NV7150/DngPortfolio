@@ -1,11 +1,10 @@
 import {Work} from "../../Work"
 import test from "../imgs/test.jpg"
+import Test from "../../WorkEach/Test";
 
 type workData = {
     works: Array<Work>
 }
-
-export const NO_DETAIL_PAGE: string = "none";
 
 const WorkData: workData = {
     works: [
@@ -14,21 +13,21 @@ const WorkData: workData = {
             about: "これはテスト",
             imgLink: test,
             keyword: ["test", "test"],
-            detailPageLink: NO_DETAIL_PAGE
+            detailComponent: Test
         },
         {
             name: "Proposal of Dataset-type-extension using multiple machine learning models",
             about: "これはテスト",
             imgLink: test,
             keyword: ["test", "test"],
-            detailPageLink: NO_DETAIL_PAGE
+            detailComponent: Test
         },
         {
             name: "テスト",
             about: "これはテスト",
             imgLink: test,
             keyword: ["test", "test"],
-            detailPageLink: NO_DETAIL_PAGE
+            detailComponent: Test
         },
     ]
 }

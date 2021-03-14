@@ -5,5 +5,5 @@ export interface Work{
     about: string;
     keyword: string[];
     imgLink: string;
-    detailPageLink: string | React.FC;
+    detailComponent: React.FC;
 }

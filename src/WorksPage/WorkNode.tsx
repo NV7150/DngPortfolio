@@ -1,10 +1,11 @@
 import React from "react";
 import {Work} from "../Work"
-import {Box, Fade, Grid, Paper, Theme, Typography} from "@material-ui/core";
+import {Box, Fade, Grid,  Theme, Typography} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 
 interface WorkNodeProps{
-    work: Work
+    work: Work,
+    onClicked: Function,
 }
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme: Theme) =>
         root: {
             width: "95%",
             height: "95%",
-            position: "relative"
+            position: "relative",
         },
         imgSet: {
             width: "100%",
@@ -75,16 +76,29 @@ const WorkNode = (props: WorkNodeProps) => {
 
     const work: Work = props.work;
 
+    const detail: React.FC = work.detailComponent;
+    let hasDetail: boolean = (detail !== undefined);
 
     const onHover = () => {
-        setHovered(true);
+        if(hasDetail)
+            setHovered(true);
     }
     const outHover = () => {
         setHovered(false);
     }
 
+    const onClick = () => {
+        props.onClicked();
+    }
+
+
     return (
-        <Box className={classes.root} onMouseOver={onHover} onMouseLeave={outHover}>
+        <Box
+            className={classes.root}
+            onMouseOver={onHover}
+            onMouseLeave={outHover}
+            onClick={onClick}
+        >
             <img src={work.imgLink}  alt={work.name} className={classes.imgSet} />
             <Box className={classes.bar}>
                 <Grid container direction={"column"} className={classes.barGrid}>

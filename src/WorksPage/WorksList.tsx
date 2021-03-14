@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useReducer, useState} from "react";
 import {Work} from "../Work";
-import {Grid, Theme} from "@material-ui/core";
-import WorkNode from "./WorkNode";
+import {Grid,  Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
+import WorkContents from "./WorkContents";
 
 
 
@@ -25,9 +25,9 @@ const WorksList = (props: WorksListProps) => {
     const classes = useStyles();
 
     const works = props.works;
-    const grids = works.map((work, i) => (
+    const grids = works.map((work, i) =>  (
         <Grid key={i} xs={6} className={classes.workGrid}>
-            <WorkNode work={work} />
+            <WorkContents work={work} />
         </Grid>
     ));
 
