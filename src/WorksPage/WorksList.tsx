@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from "react";
+import React from "react";
 import {Work} from "../Work";
 import {Grid,  Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
