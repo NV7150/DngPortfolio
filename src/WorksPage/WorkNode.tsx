@@ -1,6 +1,6 @@
 import React from "react";
 import {Work} from "../Work"
-import {Box, Grid, Theme, Typography} from "@material-ui/core";
+import {Box, Fade, Grid, Paper, Theme, Typography} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 
 interface WorkNodeProps{
@@ -49,17 +49,42 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         titleGrid: {
             marginBottom: "1rem"
+        },
+
+        moreFade: {
+            position: "absolute",
+            top: "0",
+            left: "0",
+            width: "100%",
+            height: "100%",
+        },
+        morePaper: {
+            backgroundColor: "rgba(0,0,0,0.8)",
+            textAlign: "center",
+            fontSize: "5rem",
+            width: "100%",
+            height: "100%",
+            alignItems: "center"
         }
     })
 )
 
 const WorkNode = (props: WorkNodeProps) => {
     const classes = useStyles();
+    const [hovered, setHovered] = React.useState(false);
 
     const work: Work = props.work;
-    
+
+
+    const onHover = () => {
+        setHovered(true);
+    }
+    const outHover = () => {
+        setHovered(false);
+    }
+
     return (
-        <Box className={classes.root}>
+        <Box className={classes.root} onMouseOver={onHover} onMouseLeave={outHover}>
             <img src={work.imgLink}  alt={work.name} className={classes.imgSet} />
             <Box className={classes.bar}>
                 <Grid container direction={"column"} className={classes.barGrid}>
@@ -73,6 +98,22 @@ const WorkNode = (props: WorkNodeProps) => {
                         <Grid className={classes.aboutText} xs={11}>{work.about}</Grid>
                     </Grid>
                 </Grid>
+            </Box>
+
+
+            <Box  className={classes.moreFade}>
+                <Fade in={hovered}>
+                    <Box
+                        className={classes.morePaper}
+                        display="flex"
+                        alignContent={"center"}
+                        justifyContent={"center"}
+                    >
+                        <Box>
+                            {">"}&nbsp;more
+                        </Box>
+                    </Box>
+                </Fade>
             </Box>
         </Box>
     );
