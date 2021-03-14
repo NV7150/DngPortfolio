@@ -30,8 +30,8 @@ const Footer = (props: FooterProps) => {
 
     const buttons = props.pages.map((page, i) => {
         return (
-            <Grid item className={classes.buttons}>
-                <LinkButton linkName={page.name} linkTo={page.link} fontSize={fontSize} key={i} />
+            <Grid item className={classes.buttons} key={i}>
+                <LinkButton linkName={page.name} linkTo={page.link} fontSize={fontSize}  />
             </Grid>
         );
     });

@@ -26,7 +26,7 @@ const WorksList = (props: WorksListProps) => {
 
     const works = props.works;
     const grids = works.map((work, i) =>  (
-        <Grid key={i} xs={6} className={classes.workGrid}>
+        <Grid item key={i} xs={6} className={classes.workGrid}>
             <WorkContents work={work} />
         </Grid>
     ));

@@ -108,8 +108,8 @@ const WorkNode = (props: WorkNodeProps) => {
                         </Typography>
                     </Grid>
                     <Grid item xs={12} container className={classes.about}>
-                        <Grid>=&nbsp;</Grid>
-                        <Grid className={classes.aboutText} xs={11}>{work.about}</Grid>
+                        <Grid item>=&nbsp;</Grid>
+                        <Grid item className={classes.aboutText} xs={11}>{work.about}</Grid>
                     </Grid>
                 </Grid>
             </Box>
