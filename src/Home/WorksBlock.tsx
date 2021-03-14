@@ -17,7 +17,8 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             padding: theme.spacing(2),
-            fontSize: "1.5rem"
+            fontSize: "1.5rem",
+            position: "relative"
         },
         title:{
             color: theme.palette.primary.main,
@@ -34,7 +35,7 @@ const useStyles = makeStyles((theme: Theme) =>
         },
         itemTitle: {
             marginBottom: theme.spacing(1)
-        }
+        },
     })
 )
 

@@ -14,9 +14,12 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
         },
-        columns: {
+        top: {
             paddingTop: "10vh",
             marginBottom : "25vh"
+        },
+        worksPreview: {
+            paddingBottom: "15vh"
         }
     })
 
@@ -26,10 +29,12 @@ const Home = (props: HomeProps) => {
     const classes = useStyles();
     return (
         <div>
-            <Box className={classes.columns}>
+            <Box className={classes.top}>
                 <HomeTop info={MyData}  />
             </Box>
-            <HomeWorks works={WorkData.works} />
+            <Box className={classes.worksPreview} >
+                <HomeWorks works={WorkData.works}/>
+            </Box>
         </div>
     );
 };
