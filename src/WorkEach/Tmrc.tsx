@@ -1,5 +1,5 @@
 import React from "react";
-import {Box, Grid, Theme} from "@material-ui/core";
+import {Grid, Theme, Typography} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
             paddingBottom: theme.spacing(4)
         },
         pala: {
-            paddingBottom: theme.spacing(1)
+            paddingBottom: theme.spacing(1),
         },
         subtitle: {
             fontSize: "2rem",
@@ -40,16 +40,16 @@ export default function Tmrc(){
           </Grid>
           <Grid item xs={12} className={classes.block} container>
               <Grid item xs={6} className={classes.movie}>
-                  <Box className={classes.pala}>
-                      VRゴーグルのOclus Goと専用コントローラを用いたVRレースゲームです。
-                  </Box>
-                  <Box className={classes.pala}>
-                      VRゴーグルを被り，走行妨害をしてくる敵を倒す「シューター」と，ディスプレイを見ながら運転する<br/>「ドライバー」の二人協力プレイを行えます。
-                  </Box>
-                  <Box className={classes.pala}>
+                  <Typography variant={"body1"} align={"justify"} paragraph={true}>
+                      VRゴーグルのOclus GoとArduinoで自作した専用のコントローラ，及び触覚デバイスを用いたVRレースゲームです。
+                  </Typography>
+                  <Typography variant={"body1"} align={"justify"} paragraph={true}>
+                      VRゴーグルを被って走行妨害をしてくる敵を倒していく「シューター」と，リアルのディスプレイを見ながら運転する「ドライバー」の二人協力プレイを行えます。
+                  </Typography>
+                  <Typography variant={"body1"} align={"justify"} paragraph={true}>
                       「シューター」はVRゴーグルのみならず，ゲーム内で坂を登ると椅子が傾いたり，速度によって扇風機によって風を感じたり，
                       敵にぶつかると椅子に仕込まれたマッサージ機が震えたり，というような演出により，よりリアルな体験を得られます。
-                  </Box>
+                  </Typography>
               </Grid>
               <Grid item xs={6} className={classes.movie}>
                   <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lhPLyWS9gKk" frameBorder="0"
@@ -77,6 +77,10 @@ export default function Tmrc(){
                   <Grid item xs={1}>担当部分</Grid>
                   <Grid item xs={11}>Unityゲーム製作（Arduinoへのシリアル信号送信まで）</Grid>
               </Grid>
+          </Grid>
+
+          <Grid item xs={12} className={classes.block}>
+              ※紹介動画の製作者はDangoではありませんが，製作者と出演者に許可を得て掲載しています。
           </Grid>
       </Grid>
     );
