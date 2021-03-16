@@ -1,8 +1,10 @@
-import React from "react";
-import {Grid, Theme, Box} from "@material-ui/core";
+import React, {useEffect, useRef, useState} from "react";
+import {Grid, Theme, Box, Fade} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import PropertyList from "../GeneralComponents/PropertyList";
 import LinkButton from "../GeneralComponents/LinkButton";
+
+import {init} from "ityped";
 
 type HomeTopInfos = {
     jobs: string[];
@@ -37,29 +39,55 @@ const propertyStyles = {
 
 const HomeTop = (props: HomeTopProps) => {
     const classes = useStyles();
+    const homeRef: any = useRef(null);
+    const [doFade, setDoFade] = useState(false);
+    const [animeStarted, setAnimeStarted] = useState(false);
+
+
+    useEffect( () => {
+        if(animeStarted)
+            return;
+        init(homeRef.current, {
+            showCursor: false,
+            strings: ["Dango"],
+            loop: false,
+            disableBackTyping: true,
+            onFinished: () => {
+                setTimeout(() => {
+                    setDoFade(true)
+                }, 500);
+            }
+        })
+        setAnimeStarted(true);
+    });
 
     return(
         <Grid container direction={"row"} className={classes.root} alignItems={"center"}>
             <Grid item xs={12} container alignItems={"center"}>
-                <Grid item className={classes.heading}>
-                    Dango
+                <Grid item className={classes.heading} id={"#Home1"} ref={homeRef}>
                 </Grid>
-                <Grid item className={classes.bracket}>
-                    &nbsp;= {"{"}
-                </Grid>
+                <Fade in={doFade}>
+                    <Grid item className={classes.bracket}>
+                        &nbsp;= {"{"}
+                    </Grid>
+                </Fade>
             </Grid>
+
 
             <PropertyList<HomeTopInfos>
                 info={props.info}
                 fontSize={propertyStyles.fontSize}
                 indent={propertyStyles.indent}
+                effectHook={doFade}
             />
 
-            <Grid item xs={12}>
-                <Box className={classes.bracket}>{"}"}</Box>
-            </Grid>
+            <Fade in={doFade}>
+                <Grid item xs={12}>
+                    <Box className={classes.bracket}>{"}"}</Box>
+                </Grid>
+            </Fade>
 
-            <LinkButton linkName={"more"} linkTo={"/profile"} fontSize={"2rem"} />
+            <LinkButton linkName={"more"} linkTo={"/profile"} fontSize={"2rem"} effectHook={doFade}/>
         </Grid>
 
     )

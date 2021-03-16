@@ -4,11 +4,12 @@ import "./ButtonSetting.css"
 
 import {createStyles, makeStyles} from "@material-ui/styles";
 
-import {ButtonBase, Theme} from "@material-ui/core";
+import {Box, ButtonBase, Fade, Theme} from "@material-ui/core";
 
 interface LinkButtonProps{
     linkName: string;
     linkTo: string;
+    effectHook: boolean| string;
 
     fontSize: string;
 }
@@ -29,16 +30,28 @@ const LinkButton = (props: LinkButtonProps) => {
     )
 
     const classes = useStyles();
+    const enableEffect = typeof props.effectHook !== "string";
 
     return (
-        <ButtonBase
-            disableRipple={true}
-            href={props.linkTo}
-            className={classes.root + " animatedButton"}
-        >
-            {">"}&nbsp;{props.linkName}
-        </ButtonBase>
+        <Box>
+            <Fade
+                style={(enableEffect) ? {transition: "none"}: {}}
+                in={!enableEffect || (props.effectHook as boolean)}
+            >
+                <ButtonBase
+                    disableRipple={true}
+                    href={props.linkTo}
+                    className={classes.root + " animatedButton"}
+                >
+                    {">"}&nbsp;{props.linkName}
+                </ButtonBase>
+            </Fade>
+        </Box>
     );
+};
+
+LinkButton.defaultProps = {
+    effectHook: "none"
 };
 
 export default LinkButton;

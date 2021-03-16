@@ -1,5 +1,5 @@
-import React from "react";
-import {Box, Grid, GridSize, Theme} from "@material-ui/core";
+import React, {useEffect, useRef} from "react";
+import {Box, Fade, Grid, GridSize, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import PropertyPropDefault from "./PropertyPropDefault";
 
@@ -14,6 +14,7 @@ export type ColSize = {
 export interface PropertyProps{
     propName: string;
     propKeyword: Array<string>;
+    effectHook: boolean | string;
 
     fontSize: string;
     padding: number;
@@ -39,6 +40,8 @@ const girdParse = (gird: GridSize | boolean): GridSize | boolean => {
 };
 
 const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
+    const typeRef = useRef(null);
+
     const useStyles = makeStyles((theme: Theme) =>
         createStyles({
             root: {
@@ -58,7 +61,9 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
 
     let keywords = props.propKeyword.map((keyword, i) => {
         return (
-            <Box marginLeft={1} key={i}>{keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}</Box>
+            <Box marginLeft={1} key={i}>
+                {keyword + ((i !== props.propKeyword.length - 1) ? ",": "")}
+            </Box>
         );
     });
 
@@ -77,36 +82,56 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
         xl: girdParse(titleCol.xl)
     };
 
+    const disableEffect: boolean = typeof props.effectHook !== "string";
+
+
 
     return (
         <Grid container alignItems={"flex-start"} className={classes.root}>
-            <Grid
-                item
-                xs={titleCol.xs}
-                sm={titleCol.sm}
-                md={titleCol.md}
-                lg={titleCol.lg}
-                xl={titleCol.xl}
-                className={classes.title}
+            <Fade
+                style={(disableEffect) ? {transition: "none"}: {}}
+                in={!disableEffect || (props.effectHook as boolean)}
             >
-                {props.propName}
-            </Grid>
-            <Grid item xs={1} className={classes.colon}>
-                :
-            </Grid>
-            <Grid
-                item
-                xs={exTitleCol.xs}
-                sm={exTitleCol.sm}
-                md={exTitleCol.md}
-                lg={exTitleCol.lg}
-                xl={exTitleCol.xl}
-                alignItems={"flex-start"}
+                <Grid
+                    item
+                    xs={titleCol.xs}
+                    sm={titleCol.sm}
+                    md={titleCol.md}
+                    lg={titleCol.lg}
+                    xl={titleCol.xl}
+                    className={classes.title}
+                >
+                    {props.propName}
+                </Grid>
+            </Fade>
+
+            <Fade
+                style={(disableEffect) ? {transition: "none"}: {}}
+                in={!disableEffect || (props.effectHook as boolean)}
             >
-                <Box display="flex" flexWrap="wrap" alignItems={"flex-start"}>
-                    {keywords}
-                </Box>
-            </Grid>
+                <Grid item xs={1} className={classes.colon}>
+                    :
+                </Grid>
+            </Fade>
+
+            <Fade
+                style={(disableEffect) ? {transition: "none"}: {}}
+                in={!disableEffect || (props.effectHook as boolean)}
+            >
+                <Grid
+                    item
+                    xs={exTitleCol.xs}
+                    sm={exTitleCol.sm}
+                    md={exTitleCol.md}
+                    lg={exTitleCol.lg}
+                    xl={exTitleCol.xl}
+                    alignItems={"flex-start"}
+                >
+                    <Box display="flex" flexWrap="wrap" alignItems={"flex-start"}>
+                        {keywords}
+                    </Box>
+                </Grid>
+            </Fade>
         </Grid>
     );
 };
