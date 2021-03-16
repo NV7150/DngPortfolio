@@ -15,12 +15,12 @@ const useStyles = makeStyles((theme: Theme) =>
         root: {
         },
         detailWindow: {
-            height: "80vh",
-            width: "80vw",
+            height: "90vh",
+            width: "90vw",
 
             position: "absolute",
-            top: "10vh",
-            left: "10vw",
+            top: "5vh",
+            left: "5vw",
 
             backgroundColor: "black",
             borderRadius: "10px",

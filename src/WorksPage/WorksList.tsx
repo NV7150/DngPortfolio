@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(2)
         },
         workGrid: {
-            height: "80vh"
+            height: "50vh"
         }
     })
 )

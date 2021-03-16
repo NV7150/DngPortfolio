@@ -18,7 +18,8 @@ const useStyles = makeStyles((theme: Theme) =>
         root: {
             padding: theme.spacing(2),
             fontSize: "1.5rem",
-            position: "relative"
+            position: "relative",
+            height: "50vh"
         },
         title:{
             color: theme.palette.primary.main,
@@ -49,7 +50,7 @@ const WorksBlock = (props: WorksBlockProps) => {
     }
 
     return(
-        <Box className={classes.root}>
+        <Box className={classes.root} alignItems={"center"}>
             <Grid container direction={"row"} alignItems={"center"}>
                 <Grid item xs={5} className={classes.grids}>
                     <img src={work.imgLink} alt={work.about} className={classes.imgSet} />
