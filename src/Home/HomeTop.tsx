@@ -41,12 +41,9 @@ const HomeTop = (props: HomeTopProps) => {
     const classes = useStyles();
     const homeRef: any = useRef(null);
     const [doFade, setDoFade] = useState(false);
-    const [animeStarted, setAnimeStarted] = useState(false);
 
 
     useEffect( () => {
-        if(animeStarted)
-            return;
         init(homeRef.current, {
             showCursor: false,
             strings: ["Dango"],
@@ -58,8 +55,7 @@ const HomeTop = (props: HomeTopProps) => {
                 }, 500);
             }
         })
-        setAnimeStarted(true);
-    });
+    }, [homeRef]);
 
     return(
         <Grid container direction={"row"} className={classes.root} alignItems={"center"}>

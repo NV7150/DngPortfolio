@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react";
+import React from "react";
 import {Box, Fade, Grid, GridSize, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import PropertyPropDefault from "./PropertyPropDefault";
@@ -40,7 +40,6 @@ const girdParse = (gird: GridSize | boolean): GridSize | boolean => {
 };
 
 const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
-    const typeRef = useRef(null);
 
     const useStyles = makeStyles((theme: Theme) =>
         createStyles({
