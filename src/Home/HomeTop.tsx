@@ -1,10 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
 import {Grid, Theme, Box, Fade} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
+import {init} from "ityped";
+import {disableBodyScroll, enableBodyScroll} from "body-scroll-lock";
+
 import PropertyList from "../GeneralComponents/PropertyList";
 import LinkButton from "../GeneralComponents/LinkButton";
-
-import {init} from "ityped";
 
 type HomeTopInfos = {
     jobs: string[];
@@ -44,6 +45,7 @@ const HomeTop = (props: HomeTopProps) => {
 
 
     useEffect( () => {
+        disableBodyScroll(homeRef.current);
         init(homeRef.current, {
             showCursor: false,
             strings: ["Dango"],
@@ -51,7 +53,8 @@ const HomeTop = (props: HomeTopProps) => {
             disableBackTyping: true,
             onFinished: () => {
                 setTimeout(() => {
-                    setDoFade(true)
+                    setDoFade(true);
+                    enableBodyScroll(homeRef.current);
                 }, 500);
             }
         })
