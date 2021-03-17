@@ -80,7 +80,7 @@ const HomeTop = (props: HomeTopProps) => {
                 effectHook={doFade}
                 wrapOnXs={true}
                 xs={6}
-                sm={5}
+                sm={6}
                 md={4}
             />
 

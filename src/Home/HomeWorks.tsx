@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import {Work} from "../Work"
 import Carousel from "react-material-ui-carousel";
 import WorksBlock from "./WorksBlock";
 import {createStyles, makeStyles} from "@material-ui/styles";
-import {Grid, Theme} from "@material-ui/core";
+import {Box, Grid, Hidden, Theme} from "@material-ui/core";
 import LinkButton from "../GeneralComponents/LinkButton";
+import WorkNode from "../WorksPage/WorkNode";
+import WorkDetailModal from "../WorksPage/WorkDetailModal";
+import HomeWorkContent from "./HomeWorkContent";
 
 interface HomeWorksProps{
     works: Work[]
@@ -14,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         root: {
             padding: theme.spacing(2),
-            fontSize: "1.5rem"
+            fontSize: "1.5rem",
         },
     })
 )
@@ -23,11 +26,17 @@ const useStyles = makeStyles((theme: Theme) =>
 const HomeWorks = (props: HomeWorksProps) => {
     const classes = useStyles();
 
+    const carouselContent = props.works.map((work, i) =>
+        <Box>
+            <HomeWorkContent work={work} key={i} />
+        </Box>
+    );
+
     return (
         <Grid container className={classes.root} direction={"column"}>
             <Grid item xs={12}>
                 <Carousel>
-                    {props.works.map((work, i) => (<WorksBlock work={work} key={i} />))}
+                    {carouselContent}
                 </Carousel>
             </Grid>
             <Grid item xs={12}>

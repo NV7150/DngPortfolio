@@ -8,6 +8,7 @@ import WorkDetailModal from "../WorksPage/WorkDetailModal";
 
 interface WorksBlockProps{
     work: Work;
+    onClicked: Function;
 }
 
 interface WorkDisplay{
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
             color: theme.palette.primary.main,
             fontSize: "2rem",
             overflowWrap: "break-word",
+            marginRight: "1rem"
         },
         imgSet: {
             width: "100%",
@@ -45,7 +47,6 @@ const useStyles = makeStyles((theme: Theme) =>
 const WorksBlock = (props: WorksBlockProps) => {
     const classes = useStyles();
     const work = props.work;
-    const [isClicked, setIsClicked] = useState(false);
 
     const workPart: WorkDisplay = {
         about: work.about,
@@ -53,12 +54,8 @@ const WorksBlock = (props: WorksBlockProps) => {
     }
 
     const onClicked = () => {
-        setIsClicked(true);
+        props.onClicked();
     }
-    const outClicked = () => {
-        setIsClicked(false);
-    }
-
     return(
         <Box className={classes.root} alignItems={"center"}>
             <Grid container direction={"row"} alignItems={"stretch"}>
@@ -79,11 +76,10 @@ const WorksBlock = (props: WorksBlockProps) => {
                         />{"}"}
                     </Grid>
                     <Grid item>
-                        <LinkButton linkName={"more"} clickAction={onClicked} fontSize={"1.5rem"} />
+                        <LinkButton linkName={"moreAboutThis"} clickAction={onClicked} fontSize={"1.5rem"} />
                     </Grid>
                 </Grid>
             </Grid>
-            <WorkDetailModal work={work} clicked={isClicked} outClick={outClicked} />
         </Box>
     );
 }
