@@ -1,10 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import {Work} from "../Work";
 import {Box, Grid, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import PropertyList from "../GeneralComponents/PropertyList";
 import LinkButton from "../GeneralComponents/LinkButton";
-import WorkDetailModal from "../WorksPage/WorkDetailModal";
 
 interface WorksBlockProps{
     work: Work;

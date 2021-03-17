@@ -1,12 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 import {Work} from "../Work"
 import Carousel from "react-material-ui-carousel";
-import WorksBlock from "./WorksBlock";
 import {createStyles, makeStyles} from "@material-ui/styles";
-import {Box, Grid, Hidden, Theme} from "@material-ui/core";
+import {Box, Grid, Theme} from "@material-ui/core";
 import LinkButton from "../GeneralComponents/LinkButton";
-import WorkNode from "../WorksPage/WorkNode";
-import WorkDetailModal from "../WorksPage/WorkDetailModal";
 import HomeWorkContent from "./HomeWorkContent";
 
 interface HomeWorksProps{
