@@ -50,6 +50,7 @@ class PropertyList<T> extends React.Component<PropertyListProps<T>, {}>{
                         fontSize={props.fontSize}
                         padding={props.padding}
                         effectHook={props.effectHook}
+                        wrapOnXs={props.wrapOnXs}
                         xs={props.xs}
                         sm={props.sm}
                         md={props.md}

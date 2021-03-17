@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import {Work} from "../Work";
 import {Box, Grid, Theme} from "@material-ui/core";
 import {createStyles, makeStyles} from "@material-ui/styles";
 import PropertyList from "../GeneralComponents/PropertyList";
+import LinkButton from "../GeneralComponents/LinkButton";
+import WorkDetailModal from "../WorksPage/WorkDetailModal";
 
 interface WorksBlockProps{
     work: Work;
@@ -43,10 +45,18 @@ const useStyles = makeStyles((theme: Theme) =>
 const WorksBlock = (props: WorksBlockProps) => {
     const classes = useStyles();
     const work = props.work;
+    const [isClicked, setIsClicked] = useState(false);
 
     const workPart: WorkDisplay = {
         about: work.about,
         keyword: work.keyword
+    }
+
+    const onClicked = () => {
+        setIsClicked(true);
+    }
+    const outClicked = () => {
+        setIsClicked(false);
     }
 
     return(
@@ -68,8 +78,12 @@ const WorksBlock = (props: WorksBlockProps) => {
                             xs={2}
                         />{"}"}
                     </Grid>
+                    <Grid item>
+                        <LinkButton linkName={"more"} clickAction={onClicked} fontSize={"1.5rem"} />
+                    </Grid>
                 </Grid>
             </Grid>
+            <WorkDetailModal work={work} clicked={isClicked} outClick={outClicked} />
         </Box>
     );
 }

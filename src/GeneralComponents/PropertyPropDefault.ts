@@ -4,6 +4,7 @@ const defaultProp: Partial<PropertyProps>  = {
     fontSize: "1rem",
     padding: 2,
     effectHook: "none",
+    wrapOnXs: false,
     xs: 3,
     sm: false,
     md: false,

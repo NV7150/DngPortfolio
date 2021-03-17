@@ -15,6 +15,7 @@ export interface PropertyProps{
     propName: string;
     propKeyword: Array<string>;
     effectHook: boolean | string;
+    wrapOnXs: boolean
 
     fontSize: string;
     padding: number;
@@ -83,7 +84,10 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
 
     const disableEffect: boolean = typeof props.effectHook !== "string";
 
-
+    if(props.wrapOnXs){
+        titleCol.xs = 12;
+        exTitleCol.xs = 11;
+    }
 
     return (
         <Grid container alignItems={"flex-start"} className={classes.root}>

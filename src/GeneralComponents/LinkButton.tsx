@@ -9,6 +9,7 @@ import {Box, ButtonBase, Fade, Theme} from "@material-ui/core";
 interface LinkButtonProps{
     linkName: string;
     linkTo: string;
+    clickAction: VoidFunction;
     effectHook: boolean| string;
 
     fontSize: string;
@@ -40,7 +41,8 @@ const LinkButton = (props: LinkButtonProps) => {
             >
                 <ButtonBase
                     disableRipple={true}
-                    href={props.linkTo}
+                    href={(props.linkTo !== "none") ? props.linkTo: ""}
+                    onClick={() => {props.clickAction()}}
                     className={classes.root + " animatedButton"}
                 >
                     {">"}&nbsp;{props.linkName}
@@ -51,7 +53,9 @@ const LinkButton = (props: LinkButtonProps) => {
 };
 
 LinkButton.defaultProps = {
-    effectHook: "none"
+    effectHook: "none",
+    linkTo: "none",
+    clickAction: () => {}
 };
 
 export default LinkButton;
