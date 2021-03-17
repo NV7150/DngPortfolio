@@ -1,9 +1,10 @@
 import {Work} from "../../Work"
-import test from "../imgs/test.jpg"
-import Test from "../../WorkEach/Test";
 
 import TMRC from "../imgs/TMRC.png"
 import Tmrc from "../../WorkEach/Tmrc";
+
+import MovingZabuton from "../../WorkEach/MovingZabuton";
+import MZImg from "../imgs/MovingZabuton.png"
 
 type workData = {
     works: Array<Work>
@@ -12,11 +13,11 @@ type workData = {
 const WorkData: workData = {
     works: [
         {
-            name: "テスト",
-            about: "これはテスト",
-            imgLink: test,
-            keyword: ["test", "test"],
-            detailComponent: Test
+            name: "Moving Zabuton",
+            about: "AIを使ったリアルタイム4D体感座布団",
+            imgLink: MZImg,
+            keyword: ["Python", "C/C++", "Arduino", "ML", "Hardware", "4D"],
+            detailComponent: MovingZabuton
         },
         {
             name: "Tofu Micon Real Cart 4D+VR ~Dead or Alive~",
