@@ -56,7 +56,8 @@ const ProfileInfo = (props: ProfileInfoProps) => {
                     info={info}
                     fontSize={propStyle.fontSize}
                     indent={propStyle.indent}
-                    xs={3}
+                    xs={4}
+                    sm={3}
                     md={2}
                 />
             </Grid>
