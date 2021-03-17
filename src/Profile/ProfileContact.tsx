@@ -40,7 +40,7 @@ const ProfileContact = (props: ProfileContactProps) => {
 
     const button = props.sns.map((snsElem, i) => {
         return(
-            <Grid item xs={3} key={i} className={classes.buttonGrid}>
+            <Grid item xs={6} sm={4} md={3} key={i} className={classes.buttonGrid}>
                 <LinkButton
                     linkName={snsElem.name}
                     linkTo={snsElem.link}
