@@ -53,9 +53,15 @@ export default function Tmrc(){
                   </Typography>
               </Grid>
               <Grid item xs={12} md={6} className={classes.movie}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lhPLyWS9gKk" frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen />
+                  <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/lhPLyWS9gKk"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={"TMRC"}
+                  />
               </Grid>
           </Grid>
 

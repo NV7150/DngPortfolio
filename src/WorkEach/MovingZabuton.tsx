@@ -55,9 +55,15 @@ export default function MovingZabuton(){
                   </Typography>
               </Grid>
               <Grid item xs={12} md={6} className={classes.movie}>
-                  <iframe width="100%" height="100%" src="https://www.youtube.com/embed/OjxnwR7rCn8" frameBorder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                          allowFullScreen />
+                  <iframe
+                      width="100%"
+                      height="100%"
+                      src="https://www.youtube.com/embed/OjxnwR7rCn8"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={"ムービング座布団"}
+                  />
               </Grid>
           </Grid>
           <Grid item xs={12} className={classes.block} container>
