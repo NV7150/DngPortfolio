@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
             left: "0"
         },
         bar: {
-            height: "25%",
+            // height: "25%",
             width: "100%",
             backgroundColor: "rgba(10, 10, 10, 0.8)",
             position:"absolute",

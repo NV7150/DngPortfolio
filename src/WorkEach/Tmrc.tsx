@@ -25,7 +25,8 @@ const useStyles = makeStyles((theme: Theme) =>
             paddingBottom: theme.spacing(1)
         },
         movie: {
-            padding: theme.spacing(1)
+            padding: theme.spacing(1),
+            minHeight: "50vh"
         }
     })
 )
@@ -39,7 +40,7 @@ export default function Tmrc(){
               Tofu Micon Real Cart 4D+VR ~Dead or Alive~
           </Grid>
           <Grid item xs={12} className={classes.block} container>
-              <Grid item xs={6} className={classes.movie}>
+              <Grid item xs={12} md={6} className={classes.movie}>
                   <Typography variant={"body1"} align={"justify"} paragraph={true}>
                       VRゴーグルのOclus GoとArduinoで自作した専用のコントローラ，及び触覚デバイスを用いたVRレースゲームです。
                   </Typography>
@@ -51,7 +52,7 @@ export default function Tmrc(){
                       敵にぶつかると椅子に仕込まれたマッサージ機が震えたり，というような演出により，よりリアルな体験を得られます。
                   </Typography>
               </Grid>
-              <Grid item xs={6} className={classes.movie}>
+              <Grid item xs={12} md={6} className={classes.movie}>
                   <iframe width="100%" height="100%" src="https://www.youtube.com/embed/lhPLyWS9gKk" frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen />
@@ -66,16 +67,16 @@ export default function Tmrc(){
           <Grid item xs={12} className={classes.subtitle}>製作概要</Grid>
           <Grid item xs={12} container direction={"column"} className={classes.block}>
               <Grid item xs={12} container>
-                  <Grid item xs={1}>製作人数</Grid>
-                  <Grid item xs={11}>2人</Grid>
+                  <Grid item md={1} xs={2}>製作人数</Grid>
+                  <Grid item md={11} xs={10}>2人</Grid>
               </Grid>
               <Grid item xs={12} container>
-                  <Grid item xs={1}>使用技術</Grid>
-                  <Grid item xs={11}>Unity, Arduino(C/C++)</Grid>
+                  <Grid item md={1} xs={2}>使用技術</Grid>
+                  <Grid item md={11} xs={10}>Unity, Arduino(C/C++)</Grid>
               </Grid>
               <Grid item xs={12} container>
-                  <Grid item xs={1}>担当部分</Grid>
-                  <Grid item xs={11}>Unityゲーム製作（Arduinoへのシリアル信号送信まで）</Grid>
+                  <Grid item md={1} xs={2}>担当部分</Grid>
+                  <Grid item md={11} xs={10}>Unityゲーム製作（Arduinoへのシリアル信号送信まで）</Grid>
               </Grid>
           </Grid>
 
