@@ -5,6 +5,7 @@ const defaultProp: Partial<PropertyProps>  = {
     padding: 2,
     effectHook: "none",
     wrapOnXs: false,
+    defaultWrap: false,
     xs: 3,
     sm: false,
     md: false,

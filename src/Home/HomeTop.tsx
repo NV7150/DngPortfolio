@@ -78,6 +78,10 @@ const HomeTop = (props: HomeTopProps) => {
                 fontSize={propertyStyles.fontSize}
                 indent={propertyStyles.indent}
                 effectHook={doFade}
+                wrapOnXs={true}
+                xs={6}
+                sm={5}
+                md={4}
             />
 
             <Fade in={doFade}>

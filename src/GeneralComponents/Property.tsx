@@ -15,7 +15,8 @@ export interface PropertyProps{
     propName: string;
     propKeyword: Array<string>;
     effectHook: boolean | string;
-    wrapOnXs: boolean
+    wrapOnXs: boolean;
+    defaultWrap: boolean;
 
     fontSize: string;
     padding: number;
@@ -26,7 +27,7 @@ export interface PropertyProps{
     xl: GridSize | boolean;
 }
 
-const GRID_MAX: number = 11;
+const GRID_MAX: number = 12;
 const girdParse = (gird: GridSize | boolean): GridSize | boolean => {
     if(typeof gird === "boolean")
         return gird;
@@ -49,6 +50,8 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
                 padding: theme.spacing(props.padding),
             },
             title: {
+            },
+            titleColor: {
                 color: theme.palette.secondary.main
             },
             colon: {
@@ -66,6 +69,8 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
             </Box>
         );
     });
+
+
 
     const titleCol : ColSize = {
         xs: props.xs,
@@ -85,8 +90,16 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
     const disableEffect: boolean = typeof props.effectHook !== "string";
 
     if(props.wrapOnXs){
-        titleCol.xs = 12;
-        exTitleCol.xs = 11;
+        titleCol.xs = 11;
+        exTitleCol.xs = 12;
+    }
+
+    if(props.defaultWrap){
+        for(const rKey in Object.keys(titleCol)){
+            const key: keyof ColSize = Object.keys(titleCol)[rKey] as (keyof ColSize);
+
+            exTitleCol[key] = 12;
+        }
     }
 
     return (
@@ -104,16 +117,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
                     xl={titleCol.xl}
                     className={classes.title}
                 >
-                    {props.propName}
-                </Grid>
-            </Fade>
-
-            <Fade
-                style={(disableEffect) ? {transition: "none"}: {}}
-                in={!disableEffect || (props.effectHook as boolean)}
-            >
-                <Grid item xs={1} className={classes.colon}>
-                    :
+                    <span className={classes.titleColor}>{props.propName}</span>{" :"}
                 </Grid>
             </Fade>
 

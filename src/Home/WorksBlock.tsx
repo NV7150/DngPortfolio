@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
             padding: theme.spacing(2),
             fontSize: "1.5rem",
             position: "relative",
-            height: "50vh"
+            height: "60vh"
         },
         title:{
             color: theme.palette.primary.main,
@@ -61,11 +61,11 @@ const WorksBlock = (props: WorksBlockProps) => {
 
     return(
         <Box className={classes.root} alignItems={"center"}>
-            <Grid container direction={"row"} alignItems={"center"}>
-                <Grid item xs={5} className={classes.grids}>
+            <Grid container direction={"row"} alignItems={"stretch"}>
+                <Grid item xs={6} className={classes.grids}>
                     <img src={work.imgLink} alt={work.about} className={classes.imgSet} />
                 </Grid>
-                <Grid item xs={7} container direction={"column"} className={classes.grids}>
+                <Grid item xs={6} container direction={"column"} className={classes.grids}>
                     <Grid item className={classes.itemTitle}>
                         <span className={classes.title}>{work.name}</span>
                     </Grid>
@@ -74,8 +74,8 @@ const WorksBlock = (props: WorksBlockProps) => {
                             info={workPart}
                             padding={0.5}
                             indent={"2rem"}
-                            fontSize={"1.5rem"}
-                            xs={2}
+                            fontSize={"1.25rem"}
+                            defaultWrap={true}
                         />{"}"}
                     </Grid>
                     <Grid item>
