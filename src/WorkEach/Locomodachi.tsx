@@ -1,6 +1,6 @@
 import React from "react";
 import {createStyles, makeStyles} from "@material-ui/styles";
-import {Box, Grid, Theme, Typography} from "@material-ui/core";
+import {Grid, Theme, Typography} from "@material-ui/core";
 
 interface LocomodachiProps{
 
@@ -70,6 +70,7 @@ export default function Locmodachi(props: LocomodachiProps){
                 </Grid>
                 <Grid item xs={12} md={6} className={classes.movie}>
                     <iframe
+                        title={"Locomodachi"}
                         width="100%"
                         height="100%"
                         src="https://www.youtube.com/embed/psbCic9E-XE"
@@ -78,14 +79,6 @@ export default function Locmodachi(props: LocomodachiProps){
                         allowFullScreen
                     />
                 </Grid>
-            </Grid>
-            <Grid item xs={12} className={classes.subtitle}>実績</Grid>
-            <Grid item xs={12} className={classes.blockPadLess}>
-                Maker Faire Tokyo 2019出展<br/>
-                ※出展時，Dangoは開発メンバーではなかった
-            </Grid>
-            <Grid item xs={12} className={classes.block}>
-                Tsukuba Mini Maker Faire 2020出展
             </Grid>
 
             <Grid item xs={12} className={classes.subtitle}>製作概要</Grid>

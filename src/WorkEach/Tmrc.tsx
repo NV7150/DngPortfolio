@@ -65,11 +65,6 @@ export default function Tmrc(){
               </Grid>
           </Grid>
 
-          <Grid item xs={12} className={classes.subtitle}>実績</Grid>
-          <Grid item xs={12} className={classes.block}>
-              Tsukuba Mini Maker Faire 2020 出展
-          </Grid>
-
           <Grid item xs={12} className={classes.subtitle}>製作概要</Grid>
           <Grid item xs={12} container direction={"column"} className={classes.block}>
               <Grid item xs={12} container>

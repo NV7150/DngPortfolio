@@ -80,11 +80,6 @@ export default function MovingZabuton(){
               </Grid>
           </Grid>
 
-          <Grid item xs={12} className={classes.subtitle}>実績</Grid>
-          <Grid item xs={12} className={classes.block}>
-              Yahoo! Japan Open Hack U 2020 Online Vol.1 Happy Hacking賞
-          </Grid>
-
           <Grid item xs={12} className={classes.subtitle}>製作概要</Grid>
           <Grid item xs={12} container direction={"column"} className={classes.block}>
               <Grid item xs={12} container>
