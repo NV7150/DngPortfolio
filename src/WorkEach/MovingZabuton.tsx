@@ -100,6 +100,9 @@ export default function MovingZabuton(){
                   <Grid item xs={10} md={11}>学習モデル作成，本番環境でのAI組み込み</Grid>
               </Grid>
           </Grid>
+          <Grid item xs={12} className={classes.block}>
+              ※紹介動画の製作者はDangoではありませんが，製作者と出演者に許可を得て掲載しています。
+          </Grid>
       </Grid>
     );
 }
