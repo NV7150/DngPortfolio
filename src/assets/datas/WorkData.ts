@@ -9,6 +9,9 @@ import MZImg from "../imgs/MovingZabuton.png"
 import Locmodachi from "../../WorkEach/Locomodachi";
 import LocoImg from "../imgs/Locomodachi.jpg"
 
+import KEJS from "../../WorkEach/KEJS";
+import KEJSImg from "../imgs/KEJS.png"
+
 type workData = {
     works: Array<Work>
 }
@@ -35,6 +38,13 @@ const WorkData: workData = {
             imgLink: LocoImg,
             keyword: ["Unity", "C/C++", "ESP32", "Hardware", "MobileApp", "Mobility"],
             detailComponent: Locmodachi
+        },
+        {
+            name: "Robot Referee of KENDO",
+            about: "剣道の電子審判機",
+            imgLink: KEJSImg,
+            keyword: ["Unity", "C/C++", "ESP32", "Hardware", "Sports"],
+            detailComponent: KEJS
         }
     ]
 }
