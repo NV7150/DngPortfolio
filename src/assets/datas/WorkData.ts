@@ -6,6 +6,9 @@ import Tmrc from "../../WorkEach/Tmrc";
 import MovingZabuton from "../../WorkEach/MovingZabuton";
 import MZImg from "../imgs/MovingZabuton.png"
 
+import Locmodachi from "../../WorkEach/Locomodachi";
+import LocoImg from "../imgs/Locomodachi.jpg"
+
 type workData = {
     works: Array<Work>
 }
@@ -25,7 +28,13 @@ const WorkData: workData = {
             imgLink: TMRC,
             keyword: ["Unity", "C/C++", "Arduino", "VR", "Hardware", "4D"],
             detailComponent: Tmrc
-
+        },
+        {
+            name: "Locomodachi",
+            about: "スマホで動かせる蒸気機関車",
+            imgLink: LocoImg,
+            keyword: ["Unity", "C/C++", "ESP32", "Hardware", "MobileApp", "Mobility"],
+            detailComponent: Locmodachi
         }
     ]
 }
