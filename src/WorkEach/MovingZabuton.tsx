@@ -101,7 +101,7 @@ export default function MovingZabuton(){
               </Grid>
           </Grid>
           <Grid item xs={12} className={classes.block}>
-              ※紹介動画の製作者はDangoではありませんが，製作者と出演者に許可を得て掲載しています。
+              ※紹介動画は出演者に許可を得て掲載しています。
           </Grid>
       </Grid>
     );
