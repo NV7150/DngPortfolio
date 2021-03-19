@@ -13,7 +13,8 @@ import KEJS from "../../WorkEach/KEJS";
 import KEJSImg from "../imgs/KEJS.png"
 
 type workData = {
-    works: Array<Work>
+    works: Array<Work>,
+    isMaking: boolean
 }
 
 const WorkData: workData = {
@@ -46,7 +47,8 @@ const WorkData: workData = {
             keyword: ["Unity", "C/C++", "ESP32", "Hardware", "Sports"],
             detailComponent: KEJS
         }
-    ]
+    ],
+    isMaking : true
 }
 
 export default WorkData;

@@ -132,6 +132,7 @@ const Property: React.FC<PropertyProps> = (props: PropertyProps) => {
                     md={exTitleCol.md}
                     lg={exTitleCol.lg}
                     xl={exTitleCol.xl}
+                    container
                     alignItems={"flex-start"}
                 >
                     <Box display="flex" flexWrap="wrap" alignItems={"flex-start"}>

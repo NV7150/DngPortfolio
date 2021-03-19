@@ -14,7 +14,7 @@ const WorksPage = (props: WorksPageProps) => {
     const works: Work[] = WorkData.works;
     return (
         <Box>
-            <WorksPageTop works={works} />
+            <WorksPageTop works={works} isMaking={WorkData.isMaking} />
         </Box>
     );
 }
