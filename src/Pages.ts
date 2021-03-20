@@ -13,6 +13,13 @@ export interface Page{
 
 const Pages: Page[] = [
     {
+        id: 0,
+        name: "Home",
+        link: "/",
+        component: Home,
+        exact: true
+    },
+    {
         id: 1,
         name: "Profile",
         link: "/profile",
@@ -25,13 +32,6 @@ const Pages: Page[] = [
         link: "/works",
         component: WorksPage,
         exact: false
-    },
-    {
-        id: 0,
-        name: "Home",
-        link: "/",
-        component: Home,
-        exact: true
     },
 ];
 
