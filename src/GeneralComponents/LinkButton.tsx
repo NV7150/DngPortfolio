@@ -44,7 +44,7 @@ const LinkButton = (props: LinkButtonProps) => {
         button = (
             <ButtonBase
                 disableRipple={true}
-                href={linkTo}
+                href={(linkTo === "none") ? "" : linkTo}
                 onClick={() => {props.clickAction()}}
                 className={classes.root + " animatedButton"}
             >
