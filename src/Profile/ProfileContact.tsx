@@ -45,6 +45,7 @@ const ProfileContact = (props: ProfileContactProps) => {
                     linkName={snsElem.name}
                     linkTo={snsElem.link}
                     fontSize={styleSettings.fontSize}
+                    isGlobal={true}
                 />
             </Grid>
         );

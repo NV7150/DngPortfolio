@@ -4,27 +4,35 @@ import Profile from "./views/Profile";
 import WorksPage from "./views/WorksPage";
 
 export interface Page{
+    id : number;
     name: string;
     link: string;
-    component: React.FC
+    component: React.FC,
+    exact: boolean
 }
 
 const Pages: Page[] = [
     {
-        name: "Home",
-        link: "/",
-        component: Home
-    },
-    {
+        id: 1,
         name: "Profile",
         link: "/profile",
-        component: Profile
+        component: Profile,
+        exact: false
     },
     {
+        id: 2,
         name:"Works",
         link: "/works",
-        component: WorksPage
-    }
+        component: WorksPage,
+        exact: false
+    },
+    {
+        id: 0,
+        name: "Home",
+        link: "/",
+        component: Home,
+        exact: true
+    },
 ];
 
 export default Pages;

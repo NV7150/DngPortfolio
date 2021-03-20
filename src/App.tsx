@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {createStyles, makeStyles, ThemeProvider} from "@material-ui/styles";
 import {Box, Theme} from "@material-ui/core";
 
@@ -9,7 +9,6 @@ import './App.css';
 
 import theme from "./Theme";
 import Pages from "./Pages";
-
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -22,14 +21,16 @@ const useStyles = makeStyles((theme: Theme) =>
 function App() {
     const classes = useStyles();
     const routes = Pages.map((page, i) => {
-        return (<Route exact path={page.link} component={page.component} key={i} />);
+        return (<Route exact={page.exact} path={page.link} component={page.component} key={page.id} />);
     });
     return (
     <Box className={"App " + classes.root}>
         <ThemeProvider theme={theme}>
             <Box minHeight={"100vh"}>
-                <Router>
-                    {routes}
+                <Router basename={"DngPortfolio"}>
+                    <Switch>
+                        {routes}
+                    </Switch>
                 </Router>
             </Box>
             <Footer pages={Pages} />

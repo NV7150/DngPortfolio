@@ -6,11 +6,15 @@ import {createStyles, makeStyles} from "@material-ui/styles";
 
 import {Box, ButtonBase, Fade, Theme} from "@material-ui/core";
 
+import {Link} from "react-router-dom"
+
+
 interface LinkButtonProps{
     linkName: string;
     linkTo: string;
     clickAction: VoidFunction;
     effectHook: boolean| string;
+    isGlobal: boolean
 
     fontSize: string;
 }
@@ -33,20 +37,38 @@ const LinkButton = (props: LinkButtonProps) => {
     const classes = useStyles();
     const enableEffect = typeof props.effectHook !== "string";
 
+    const linkTo = props.linkTo;
+
+    let button;
+    if(props.isGlobal || props.linkTo === "none"){
+        button = (
+            <ButtonBase
+                disableRipple={true}
+                href={linkTo}
+                onClick={() => {props.clickAction()}}
+                className={classes.root + " animatedButton"}
+            >
+                {">"}&nbsp;{props.linkName}
+            </ButtonBase>
+        );
+    }else{
+        button = (
+            <Link
+                to={linkTo}
+                className={classes.root + " animatedButton"}
+            >
+                {">"}&nbsp;{props.linkName}
+            </Link>
+        );
+    }
+
     return (
         <Box>
             <Fade
                 style={(enableEffect) ? {transition: "none"}: {}}
                 in={!enableEffect || (props.effectHook as boolean)}
             >
-                <ButtonBase
-                    disableRipple={true}
-                    href={(props.linkTo !== "none") ? props.linkTo: ""}
-                    onClick={() => {props.clickAction()}}
-                    className={classes.root + " animatedButton"}
-                >
-                    {">"}&nbsp;{props.linkName}
-                </ButtonBase>
+                {button}
             </Fade>
         </Box>
     );
@@ -55,6 +77,7 @@ const LinkButton = (props: LinkButtonProps) => {
 LinkButton.defaultProps = {
     effectHook: "none",
     linkTo: "none",
+    isGlobal: true,
     clickAction: () => {}
 };
 
