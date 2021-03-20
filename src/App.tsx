@@ -9,6 +9,7 @@ import './App.css';
 
 import theme from "./Theme";
 import Pages from "./Pages";
+import ScrollToTop from "./GeneralComponents/ScrollToTop";
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -23,17 +24,19 @@ function App() {
     const routes = Pages.map((page, i) => {
         return (<Route exact={page.exact} path={page.link} component={page.component} key={page.id} />);
     });
+
     return (
     <Box className={"App " + classes.root}>
         <ThemeProvider theme={theme}>
             <Box minHeight={"100vh"}>
                 <Router >
+                    <ScrollToTop />
                     <Switch>
                         {routes}
                     </Switch>
+                    <Footer pages={Pages} />
                 </Router>
             </Box>
-            <Footer pages={Pages} />
         </ThemeProvider>
     </Box>
     );

@@ -6,7 +6,7 @@ import {createStyles, makeStyles} from "@material-ui/styles";
 
 import {Box, ButtonBase, Fade, Theme} from "@material-ui/core";
 
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 
 interface LinkButtonProps{
@@ -53,12 +53,17 @@ const LinkButton = (props: LinkButtonProps) => {
         );
     }else{
         button = (
-            <Link
+            <NavLink
                 to={linkTo}
-                className={classes.root + " animatedButton"}
+                style={{textDecoration: "none"}}
             >
-                {">"}&nbsp;{props.linkName}
-            </Link>
+                <ButtonBase
+                    disableRipple={true}
+                    className={classes.root + " animatedButton"}
+                >
+                    {">"}&nbsp;{props.linkName}
+                </ButtonBase>
+            </NavLink>
         );
     }
 
@@ -77,7 +82,7 @@ const LinkButton = (props: LinkButtonProps) => {
 LinkButton.defaultProps = {
     effectHook: "none",
     linkTo: "none",
-    isGlobal: true,
+    isGlobal: false,
     clickAction: () => {}
 };
 
