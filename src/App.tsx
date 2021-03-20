@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import {createStyles, makeStyles, ThemeProvider} from "@material-ui/styles";
 import {Box, Theme} from "@material-ui/core";
 
@@ -27,7 +27,7 @@ function App() {
     <Box className={"App " + classes.root}>
         <ThemeProvider theme={theme}>
             <Box minHeight={"100vh"}>
-                <Router basename={process.env.PUBLIC_URL}>
+                <Router >
                     <Switch>
                         {routes}
                     </Switch>
