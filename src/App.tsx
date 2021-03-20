@@ -27,7 +27,7 @@ function App() {
     <Box className={"App " + classes.root}>
         <ThemeProvider theme={theme}>
             <Box minHeight={"100vh"}>
-                <Router basename={"DngPortfolio"}>
+                <Router basename={"/DngPortfolio"}>
                     <Switch>
                         {routes}
                     </Switch>
